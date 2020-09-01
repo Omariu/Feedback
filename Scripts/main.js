@@ -137,6 +137,7 @@ const SendMessage = () => {
   view.graphics.removeAll();
   document.querySelector("#app-search").style.display = "none";
   // console.log("messages", JSON.parse(localStorage.getItem("messages")));
+  openSnackbar();
 };
 
 const GetAllMessage = () => {
@@ -292,4 +293,13 @@ const DisplayMessages = () => {
 const CloseForm = () => {
   view.graphics.removeAll();
   document.querySelector("#app-search").style.display = "none";
+};
+
+const openSnackbar = () => {
+  var x = document.getElementById("snackbar");
+  x.className = "show";
+  x.innerHTML = "Message sent successfully, we will contact you thanks";
+  setTimeout(function () {
+    x.className = x.className.replace("show", "");
+  }, 5000);
 };
