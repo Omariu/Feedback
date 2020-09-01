@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Feedback</title>
+    <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/4.16/esri/themes/dark/main.css"
+    />
+    <script src="https://js.arcgis.com/4.16/"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="Scripts/main.js"></script>
+    <script>
+      LoadMap();
+    </script>
+  </head>
+  <body>
+    <div id="viewDiv">
+      <div id="app-title" class="esri-widget">Feedback</div>
+      <div
+        id="pin-button"
+        class="esri-widget esri-widget--button esri-interactive"
+        title="Locate the point"
+      >
+        <span class="esri-icon-blank-map-pin"></span>
+      </div>
+      <div
+        id="list-button"
+        class="esri-widget esri-widget--button esri-interactive"
+        title="Locate the point"
+        onclick="DisplayMessages()"
+      >
+        <span class="esri-icon-drag-horizontal"></span>
+      </div>
+      <div id="app-search" style="display: none" class="esri-widget">
+        <div>
+          <span
+            class="esri-icon-close"
+            id="closs-btn"
+            onclick="CloseForm()"
+          ></span>
+          <h4 id="form-header">Please fill the form</h4>
+        </div>
+        <hr />
+        <input
+          type="text"
+          class="esri-input myinput"
+          id="txtName"
+          placeholder="Enter your name"
+        />
+        <br />
+        <input
+          type="text"
+          class="esri-input myinput"
+          id="txtPhone"
+          placeholder="Enter your phone"
+        />
+        <br />
+        <input
+          type="text"
+          class="esri-input myinput"
+          id="txtEmail"
+          placeholder="Enter your email"
+        />
+        <br />
+        <select id="ddlOptions" class="esri-input myinput">
+          <option value="Suggest">Suggest</option>
+          <option value="Complain">Complain</option>
+          <option value="Other">Other</option>
+        </select>
+        <br />
+        <textarea
+          id="txtMessage"
+          rows="4"
+          class="esri-input myinput"
+          placeholder="Enter your message"
+        ></textarea>
+        <hr />
+
+        <input
+          type="button"
+          class="esri-button myinput"
+          value="Send"
+          id="btnSend"
+          onclick="SendMessage()"
+        />
+      </div>
+    </div>
+  </body>
+</html>
